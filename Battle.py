@@ -6,7 +6,7 @@ pokemonDB = mongoClient['pokemondb']
 pokemonColl = pokemonDB['pokemon_data']
 
 def fetch(pokemonid):
-    return pokemonColl.find_one({"pokedex_number":pokemonid})
+    return pokemonColl.find_one({"pokedex_number": str(pokemonid)})
 
 def battle(pokemon1, pokemon2):
     print("Let the Pokemon battle begin! ================")
@@ -31,3 +31,4 @@ def main():
     battle(pokemon1, pokemon2)
 
 main()
+
