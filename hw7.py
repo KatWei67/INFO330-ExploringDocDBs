@@ -35,7 +35,7 @@ strong_pokemon = collection.find({'attack': {'$gt': 150}})
 for pokemon in strong_pokemon:
     print("Name:", pokemon['name'])
     print("Pokedex number:", pokemon['pokedex_number'])
-    print("Types:", pikachu['type1'], pikachu['type2'])
+    print("Types:", pokemon['type1'], pokemon['type2'])
     print("HP:", pokemon['hp'])
     print("Attack:", pokemon['attack'])
     print("Defense:", pokemon['defense'])
@@ -51,10 +51,11 @@ print('')
 # Question 3: Rerurn all the Pokemon with an ability "Overgrow"
 print('Answer to question 3:')
 overgrow_pokemon = collection.find({'abilities': {'$regex': 'Overgrow', '$options': 'i'}})
+
 for pokemon in overgrow_pokemon:
     print("Name:", pokemon['name'])
     print("Pokedex number:", pokemon['pokedex_number'])
-    print("Types:", pikachu['type1'], pikachu['type2'])
+    print("Types:", pokemon['type1'], pokemon['type2'])
     print("HP:", pokemon['hp'])
     print("Attack:", pokemon['attack'])
     print("Defense:", pokemon['defense'])
